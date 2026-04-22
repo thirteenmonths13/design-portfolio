@@ -18,7 +18,7 @@ export default function App() {
     <div className="w-full bg-white text-black">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-6 md:px-12 backdrop-blur-md bg-white/70">
-        <div className="font-bold text-lg tracking-wide uppercase">TANG WENJIE</div>
+        <a href="#home" className="font-bold text-lg tracking-wide uppercase hover:text-gray-400 transition-colors">TANG WENJIE</a>
         <div className="flex gap-6 md:gap-8 text-sm font-medium">
           <a href="#projects" className="transition-colors hover:text-gray-400">Projects</a>
           <a href="#about" className="transition-colors hover:text-gray-400">About</a>
@@ -26,8 +26,8 @@ export default function App() {
         </div>
       </nav>
 
-      {/* 1. First Screen: 100vh Full Screen Container, Pure White Background */}
-      <section className="h-screen w-full bg-white flex flex-col justify-center items-center relative overflow-hidden">
+      {/* 1. First Screen: Hero Section */}
+      <section id="home" className="h-screen w-full bg-white flex flex-col justify-center items-center relative overflow-hidden">
         {/* Interactive ASCII Background Canvas */}
         <AsciiCanvas imageUrl="https://raw.githubusercontent.com/thirteenmonths13/Portfolio-assets/refs/heads/main/Create%20Adam.png" />
         
@@ -38,10 +38,18 @@ export default function App() {
           className="text-center z-10 pointer-events-none"
         >
           <h1 className="text-3xl md:text-5xl font-light tracking-tight">
-            TANG
+            Hello~ It’s 唐雯婕.
           </h1>
-          <p className="mt-4 text-gray-400 text-sm tracking-widest uppercase">
-            Selected Works
+          <p className="mt-4 text-black text-sm tracking-widest uppercase font-medium">
+            Interaction Designer · NUI Explorer · Creative Technologist
+          </p>
+          <p className="mt-6 text-gray-500 text-lg italic tracking-wide">
+            “不止于界面，不止于体验”
+          </p>
+          <p className="mt-2 text-gray-400 text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+            <span>Beyond Interface</span>
+            <span className="text-gray-300">|</span> 
+            <span>Beyond Experience.</span>
           </p>
         </motion.div>
         
@@ -66,7 +74,30 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. Contact Module */}
+      {/* 3. About Me */}
+      <section id="about" className="w-full max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center flex flex-col items-center"
+        >
+          <h2 className="text-2xl font-light mb-8">About Me</h2>
+          <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-6 text-justify md:text-center">
+            我是唐雯婕，一位探索自然用户界面 (NUI) 与创意技术的交互设计师。
+            我热衷于创造跨越屏幕体验边界的作品，将物理世界与数字领域融合，
+            打造更加直观、富有诗意的人机交互体验。
+          </p>
+          <p className="text-gray-400 leading-relaxed text-xs md:text-sm text-center">
+            I am an Interaction Designer exploring the boundaries of Natural User Interfaces (NUI) and creative technologies.
+            Driven by a passion for creating experiences that go beyond the screen, blending physical and digital realms to 
+            make intuitive and poetic human-computer experiences.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* 4. Contact Module */}
       <section id="contact" className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pb-32">
         <motion.div 
           className="flex flex-col items-center justify-center text-center py-24 border-t border-gray-100"

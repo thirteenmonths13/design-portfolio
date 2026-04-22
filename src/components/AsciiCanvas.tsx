@@ -127,14 +127,17 @@ export default function AsciiCanvas({ imageUrl }: AsciiCanvasProps) {
         if (imgAspect > canvasAspect) {
           drawWidth = tempCanvas.width;
           drawHeight = tempCanvas.width / imgAspect;
-          offsetX = 0;
-          offsetY = (tempCanvas.height - drawHeight) / 2;
         } else {
           drawHeight = tempCanvas.height;
           drawWidth = tempCanvas.height * imgAspect;
-          offsetX = (tempCanvas.width - drawWidth) / 2;
-          offsetY = 0;
         }
+
+        // Apply a 20% scale increment as requested
+        drawWidth *= 1.2;
+        drawHeight *= 1.2;
+        
+        offsetX = (tempCanvas.width - drawWidth) / 2;
+        offsetY = (tempCanvas.height - drawHeight) / 2;
 
         tempCtx.fillStyle = 'white';
         tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
